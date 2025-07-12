@@ -1,14 +1,16 @@
 services:
-  n8n:
-    image: docker.n8n.io/n8nio/n8n
+  n8n_tutorial: # Define the n8n service
+    image: docker.n8n.io/n8nio/n8n # Official n8n Docker image
     ports:
-      - "5678:5678"
+      - "5678:5678" # Map host port 5678 to container port 5678
     environment:
-      - N8N_RUNNERS_ENABLED=true
-      - N8N_BASIC_AUTH_ACTIVE=true
-      - N8N_EDITOR_BASE_URL=http://localhost:5678
-      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
-      - N8N_OWNER=admin@example.com  # Add your owner email here, replace with real email
+      - N8N_RUNNERS_ENABLED=true # Enable task runners for handling workflows
+      - N8N_BASIC_AUTH_ACTIVE=true # Enable basic authentication for security
+      - N8N_EDITOR_BASE_URL=http://localhost:5678 # URL to access the n8n editor UI
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true # Enforce secure file permissions
+      - N8N_OWNER=admin@example.com # Set the owner email for n8n (replace with your real email)
+      - N8N_BASIC_AUTH_USER=admin # Username for basic authentication
+      - N8N_BASIC_AUTH_PASSWORD=Strongpass123 # Password for basic authentication
     volumes:
-      - ./n8n_data:/home/node/.n8n
-    restart: always
+      - ./n8n_data:/home/node/.n8n # Persist data by mapping host folder to container
+    restart: always # Restart the container automatically if it crashes or stops

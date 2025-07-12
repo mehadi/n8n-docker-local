@@ -23,13 +23,14 @@ This guide explains how to run n8n using Docker Compose.
 ### Environment Variables
 You can configure n8n by modifying environment variables in the `docker-compose.yml` file:
 
-| Variable | Description            | Default Value           |
-|----------|------------------------|-------------------------|
-| `N8N_RUNNERS_ENABLED` | Enable rnners          | `true`                  |
-| `N8N_BASIC_AUTH_ACTIVE` | Enable or disable basic authentication for the n8n editor UI         | `true`                  |
-| `N8N_EDITOR_BASE_URL` | Base URL for accessing the n8n editor         | `http://localhost:5678` |
-| `N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS` | Enforce strict file permissions on settings | `true`                  |
-| `N8N_OWNER` | Email of the owner account (replace with your real email)    | `admin@example.com` |
+| Variable | Description                                                     | Default Value           |
+|----------|-----------------------------------------------------------------|-------------------------|
+| `N8N_RUNNERS_ENABLED` | Enable rnners                                                   | `true`                  |
+| `N8N_BASIC_AUTH_ACTIVE` | Enable or disable basic authentication for the n8n editor UI    | `true`                  |
+| `N8N_EDITOR_BASE_URL` | Base URL for accessing the n8n editor                           | `http://localhost:5678` |
+| `N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS` | Enforce strict file permissions on settings                     | `true`                  |
+| `N8N_OWNER` | Email of the owner account (replace with your real email)       | `admin@example.com` |
+| `N8N_BASIC_AUTH_PASSWORD` | Password of the owner account (replace with your real password) | `Strongpass123` |
 
 ### Persistent Storage
 Data is persisted in the `n8n_data` directory via Docker volume.
